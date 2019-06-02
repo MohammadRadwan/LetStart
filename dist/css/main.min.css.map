@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/_global.scss"],"names":[],"mappings":"AAAA,I,CACI,e,CACH,E,CAGG,c,CACA,U","file":"main.min.css","sourcesContent":["body {\r\n    background: #eee;\r\n}\r\n\r\nh1 {\r\n    font-size: 40px;\r\n    color: blue;\r\n}"]}
