@@ -111,6 +111,22 @@ html(lang="en")
                                         p We build pretty simple tools and this allows us to take designs simple
             //- End About
 
+            //- Start Slider
+            section.slider
+                .container
+                    .row
+                        .col-md-8.mx-auto.text-center.slider-head
+                            h2 App Screenshots
+                    .screenshot-container
+                        .swiper-container
+                            .swiper-wrapper
+                                - for (var x = 1; x <= 7; x++)
+                                    .swiper-slide
+                                        img(src="images/slider/" + x + ".jpg", class="img-fluid", alt="Screenshot " + x)
+                        //- Pagination
+                        .swiper-pagination
+            //- End Slider
+
         //- End Main-Content
 
         //- Start Footer

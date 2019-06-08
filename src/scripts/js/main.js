@@ -21,4 +21,19 @@ $(document).ready(function(){
             scrollLinkActive.removeClass('nav-active');
         }
     });
+
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 5,
+        spaceBetween: 38,
+        loop: true,
+        speed: 1500,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+      });
 });

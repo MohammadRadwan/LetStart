@@ -79,7 +79,8 @@ gulp.task('css-vendors', function () {
     return gulp.src([
         'node_modules/font-awesome/css/font-awesome.min.css', 
         'node_modules/bootstrap/dist/css/bootstrap.min.css',
-        'src/stylesheets/vendors/animate.css'
+        'src/stylesheets/vendors/animate.css',
+        'src/stylesheets/vendors/*.css',
         ])
         .pipe(plumber({ errorHandler: function(err) {
             notify.onError({
@@ -141,8 +142,7 @@ gulp.task('js-vendors', function () {
         'node_modules/jquery/dist/jquery.min.js', 
         'node_modules/popper.js/dist/umd/popper.min.js',
         'node_modules/bootstrap/dist/js/bootstrap.min.js',
-        'src/scripts/vendors/jquery.nicescroll.min.js',
-        'src/scripts/vendors/wow.min.js'
+        'src/scripts/vendors/*.js',
         ])
         .pipe(plumber({ errorHandler: function(err) {
             notify.onError({
