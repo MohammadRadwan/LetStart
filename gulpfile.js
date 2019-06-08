@@ -95,7 +95,7 @@ gulp.task('css-vendors', function () {
 
 // Fonts Task
 gulp.task('fonts', function () {
-    return gulp.src('node_modules/font-awesome/fonts/*')
+    return gulp.src(['node_modules/font-awesome/fonts/*', 'src/fonts/*.*'])
         .pipe(plumber({ errorHandler: function(err) {
             notify.onError({
                 title: "Gulp error in " + err.plugin,
@@ -108,7 +108,7 @@ gulp.task('fonts', function () {
 
 // Images Task
 gulp.task('images', function () {
-    return gulp.src('src/images/*')
+    return gulp.src('src/images/**/*.*')
     .pipe(plumber({ errorHandler: function(err) {
         notify.onError({
             title: "Gulp error in " + err.plugin,
@@ -180,7 +180,7 @@ gulp.task('watch', function () {
         'node_modules/bootstrap/scss/bootstrap.scss',
         'src/stylesheets/sass/main.scss'
     ], ['stylesheets']);
-    gulp.watch('node_modules/font-awesome/fonts/*', ['fonts']);
+    gulp.watch(['node_modules/font-awesome/fonts/*', 'src/fonts/*.*'], ['fonts']);
     gulp.watch([
         'node_modules/jquery/dist/jquery.min.js', 
         'node_modules/popper.js/dist/popper.min.js',

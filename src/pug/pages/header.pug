@@ -1,3 +1,23 @@
 header
     .container
-        h1 Header
+        //- Start Navbar
+        nav.navbar.navbar-expand-lg.navbar-light.px-0
+            a.navbar-brand(href='index.html')
+                img(src='images/logo/logo-blue.png' alt='Logo Image')
+            button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+                span.navbar-toggler-icon
+            #navbarNav.collapse.navbar-collapse.justify-content-end
+                ul.navbar-nav
+                    li.nav-item.active
+                        a(href='index.html') Home
+                    li.nav-item
+                        a(href='#') Features
+                    li.nav-item
+                        a(href='#') Screenshots
+                    li.nav-item
+                        a(href='#') Pricing
+                    li.nav-item
+                        a(href='#') Download
+                    li.nav-item
+                        a(href='#') Contact Us
+        //- End Navbar

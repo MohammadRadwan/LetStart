@@ -2,20 +2,121 @@ include pug/includes/variables
 include pug/includes/mixins
 
 doctype
-html
+html(lang="en")
     head
+        //- Start Meta
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
         meta(name="viewport" content="width=device-width, initial-scale=1")
         meta(name = "description", content="Pug Project")
+        //- End Meta
+        //- Start Title
         title #{indexTitle}
+        //- End Title
+        //- Start Styles
         include pug/includes/styles
+        //- End Styles
     body
-
+        //- Start Header
         include pug/pages/header
+        //- End Header
 
-        main.container This is Pug Container 1
+        //- Start Main-Content
+        main.home-content
+            section.home-banner
+                .container
+                    //- Start Interface
+                    .row
+                        .col-md-7.col-lg-6
+                            //- Left
+                            .home-info
+                                h1 App That <br>Suits You Better
+                                p.subtitle inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards.
+                                .store-btn
+                                    a(href="#" class="active")
+                                        i(class="fa fa-apple" aria-hidden="true")
+                                        | App Store
+                                    a(href="#")
+                                        i(class="fa fa-android" aria-hidden="true")
+                                        | Google Play
+                        .col-md-3.offset-lg-2.col-lg-4
+                            //- Right
+                            .home-image
+                                img(class="img-fluid" src="images/header/mockup1.png" alt="Interface Image")
+                    //- End Interface
 
+            //- Start Features
+            section.features.text-center
+                .container
+                    h2 Features You Love
+                    .row
+                        .col-md-4
+                            .features-info
+                                i(class="fa fa-smile-o" aria-hidden="true")
+                                h6 Simple
+                                p We build pretty simple tools and this allows us to take designs simple
+                        .col-md-4
+                            .features-info
+                                i(class="fa fa-pencil-square-o" aria-hidden="true")
+                                h6 Powerful Design
+                                p We build pretty simple tools and this allows us to take designs simple
+                        .col-md-4
+                            .features-info
+                                i(class="fa fa-cog" aria-hidden="true")
+                                h6 Customizability
+                                p We build pretty simple tools and this allows us to take designs simple
+            //- End Features
+
+            //- Start About
+            section.about
+                .container
+                    .row
+                        .col-md-8.mx-auto.text-center.about-head
+                            h2 About App
+                            p Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua. Ut Enim Ad Minim Veniam, Quis Nostrud Exercitation.Look Even Slightly Believable
+                    .row
+                        .col-md-5
+                            img(src="images/about/mockup7.png" class="img-fluid"  alt="About Image")
+                        .col-md-7
+                            .row
+                                .col-md-6.col-lg-4
+                                    .about-info
+                                        i(class="fa fa-cog" aria-hidden="true")
+                                        h6 Customizability
+                                        p We build pretty simple tools and this allows us to take designs simple
+                                .col-md-6.col-lg-4
+                                    .about-info
+                                        i(class="fa fa-diamond" aria-hidden="true")
+                                        h6 Unique Design
+                                        p We build pretty simple tools and this allows us to take designs simple
+                                .col-md-6.col-lg-4
+                                    .about-info
+                                        i(class="fa fa-refresh" aria-hidden="true")
+                                        h6 Always updated
+                                        p We build pretty simple tools and this allows us to take designs simple
+                                .col-md-6.col-lg-4
+                                    .about-info
+                                        i(class="fa fa-eye" aria-hidden="true")
+                                        h6 Retina Ready
+                                        p We build pretty simple tools and this allows us to take designs simple
+                                .col-md-6.col-lg-4
+                                    .about-info
+                                        i(class="fa fa-headphones" aria-hidden="true")
+                                        h6 Excellent Support
+                                        p We build pretty simple tools and this allows us to take designs simple
+                                .col-md-6.col-lg-4
+                                    .about-info
+                                        i(class="fa fa-mobile" aria-hidden="true")
+                                        h6 Responsive
+                                        p We build pretty simple tools and this allows us to take designs simple
+            //- End About
+
+        //- End Main-Content
+
+        //- Start Footer
         include pug/pages/footer
-        
+        //- End Footer
+
+        //- Start Scripts
         include pug/includes/scripts
+        //- End Scripts

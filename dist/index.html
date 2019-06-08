@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -15,14 +15,119 @@
   <body>
     <header>
       <div class="container">
-        <h1>Header</h1>
+        <nav class="navbar navbar-expand-lg navbar-light px-0"><a class="navbar-brand" href="index.html"><img src="images/logo/logo-blue.png" alt="Logo Image"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active"><a href="index.html">Home</a></li>
+              <li class="nav-item"><a href="#">Features</a></li>
+              <li class="nav-item"><a href="#">Screenshots</a></li>
+              <li class="nav-item"><a href="#">Pricing</a></li>
+              <li class="nav-item"><a href="#">Download</a></li>
+              <li class="nav-item"><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+        </nav>
       </div>
     </header>
-    <main class="container">This is Pug Container 1</main>
+    <main class="home-content">
+      <section class="home-banner">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-7 col-lg-6">
+              <div class="home-info">
+                <h1>App That <br>Suits You Better</h1>
+                <p class="subtitle">inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards.</p>
+                <div class="store-btn"><a class="active" href="#"><i class="fa fa-apple" aria-hidden="true"></i>App Store</a><a href="#"><i class="fa fa-android" aria-hidden="true"></i>Google Play</a></div>
+              </div>
+            </div>
+            <div class="col-md-3 offset-lg-2 col-lg-4">
+              <div class="home-image"><img class="img-fluid" src="images/header/mockup1.png" alt="Interface Image"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="features text-center">
+        <div class="container">
+          <h2>Features You Love</h2>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="features-info"><i class="fa fa-smile-o" aria-hidden="true"></i>
+                <h6>Simple</h6>
+                <p>We build pretty simple tools and this allows us to take designs simple</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="features-info"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                <h6>Powerful Design</h6>
+                <p>We build pretty simple tools and this allows us to take designs simple</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="features-info"><i class="fa fa-cog" aria-hidden="true"></i>
+                <h6>Customizability</h6>
+                <p>We build pretty simple tools and this allows us to take designs simple</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="about">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 mx-auto text-center about-head">
+              <h2>About App</h2>
+              <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua. Ut Enim Ad Minim Veniam, Quis Nostrud Exercitation.Look Even Slightly Believable</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-5"><img class="img-fluid" src="images/about/mockup7.png" alt="About Image"></div>
+            <div class="col-md-7">
+              <div class="row">
+                <div class="col-md-6 col-lg-4">
+                  <div class="about-info"><i class="fa fa-cog" aria-hidden="true"></i>
+                    <h6>Customizability</h6>
+                    <p>We build pretty simple tools and this allows us to take designs simple</p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="about-info"><i class="fa fa-diamond" aria-hidden="true"></i>
+                    <h6>Unique Design</h6>
+                    <p>We build pretty simple tools and this allows us to take designs simple</p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="about-info"><i class="fa fa-refresh" aria-hidden="true"></i>
+                    <h6>Always updated</h6>
+                    <p>We build pretty simple tools and this allows us to take designs simple</p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="about-info"><i class="fa fa-eye" aria-hidden="true"></i>
+                    <h6>Retina Ready</h6>
+                    <p>We build pretty simple tools and this allows us to take designs simple</p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="about-info"><i class="fa fa-headphones" aria-hidden="true"></i>
+                    <h6>Excellent Support</h6>
+                    <p>We build pretty simple tools and this allows us to take designs simple</p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="about-info"><i class="fa fa-mobile" aria-hidden="true"></i>
+                    <h6>Responsive</h6>
+                    <p>We build pretty simple tools and this allows us to take designs simple</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
     <footer>
-      <div class="container">
-        <h1>Footer</h1>
-      </div>
+      <div class="container"></div>
     </footer>
     <script src="js/vendors/jquery.min.js"></script>
     <script src="js/vendors/popper.min.js"> </script>

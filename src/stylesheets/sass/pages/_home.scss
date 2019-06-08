@@ -1,2 +1,132 @@
+@import '../helpers/_mixins.scss';
 
+main {
+    // Start Home Interface
+    .home-banner {
+        height: 650px;
+        padding: 170px 100px;
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('../images/header/svg-img.svg') no-repeat top right/contain;
+            z-index: -1;
+        }
+        .home-info {
+            position: relative;
+            z-index: 2;
+            h1 {
+                font-family: pt_sansregular;
+                font-weight: bold;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 1.5rem;
+            }
+            .subtitle {
+                font-family: pt_sans_captionregular;
+                font-size: 26px;
+                color: #a5a5a5;
+                line-height: 1.3;
+                margin-bottom: 1.5rem
+            }
+            .store-btn {
+                a {
+                    align-items: center;
+                    display: inline-flex !important;
+                    background: #fff;
+                    color: #633991;
+                    border: 1px solid #633991;
+                    border-radius: 5px;
+                    transition: all 0.5s;
+                    padding: 1rem 1.5rem;
+                    font-size: 18px;
+                    text-decoration: none;
+                    cursor: pointer;
+                    i {
+                        font-size: 25px;
+                        margin-right: 10px;
+                    }
+                    &:first-of-type {
+                        margin-right: 20px;
+                    }
+                    &:hover {
+                        background-color: #633991;
+                        color: #ffffff;
+                        border: 1px solid #633991;
+                    }
+                }
+                a.active {
+                    background-color: #633991;
+                    color: #ffffff;
+                    border: 1px solid #633991;
+                    &:hover {
+                        background: #fff;
+                        color: #633991;
+                        border: 1px solid #633991;
+                    }
+                }
+            }
+        }
+        .home-image { z-index: 9999; }
+    }
+    // End Home Interface
+    
+    // Start Features
+    .features {
+        padding: 140px 0 100px;
+        .features-info { padding: 0 50px; }
+    }
+    // End Features
+
+    // Start About
+    .about {
+        padding: 100px 0;
+        background: #faf6fb;
+        .about-head {
+            margin-bottom: 70px;
+            p {
+                text-transform: capitalize;
+                color: #888888;
+                line-height: 1.8;
+            }
+        }
+        .about-info { margin-bottom: 40px; }
+    }
+    // End About
+
+    // Start Global
+    .features, .about {
+        h2 {
+            font-family: "Poppins", serif;
+            letter-spacing: 1px;
+            margin-bottom: 60px;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 1rem;
+            &:after {
+                @include line-gradient;
+            }
+        }
+        .features-info, .about-info {
+            i {
+                @include icon-gradient;
+            }
+            h6 {
+                margin-bottom: 1rem;
+                font-weight: 600;
+                font-size: 1rem;
+                font-family: "Poppins", sans-serif;
+            }
+            p {
+                color: #a5a5a5;
+                line-height: 1.9;
+            }
+        }
+    }
+    // End Global
+}
 

@@ -1,0 +1,86 @@
+@import '../helpers/_mixins.scss';
+
+header {
+    font-family: "Montserrat", sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    padding: 20px 25px;
+    line-height: 1;
+    transition: all 0.4s ease;
+    nav {
+        padding: 0;
+        .collapse {
+            ul {
+                li {
+                    padding: 0 10px;
+                    position: relative;
+                    a {
+                        font-size: 12px;
+                        position: relative;
+                        color: #fff;
+                        letter-spacing: 1px;
+                        text-transform: uppercase;
+                        line-height: 1px;
+                        text-decoration: none;
+                        padding-right: .5rem;
+                        padding-left: .5rem;
+                    }
+                    &:hover {
+                        a {
+                            &:after {
+                                @include menu-line;
+                                animation: line .5s;
+                                transform-origin: 0% 100%;
+                            }
+                        }
+                    }
+                }
+                li.active {
+                    a {
+                        &:after {
+                            @include menu-line;
+                            transform: scaleX(1);
+                        }
+                    }
+                    &:hover {
+                        a {
+                            &:after {
+                                @include menu-line;
+                                animation: line 0s;
+                                transform: scaleX(1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.nav-scroll {
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-item {
+    color: rgba(0, 0, 0, 0.7) !important;
+    &:hover {
+        color: #633991 !important;
+    }
+}
+
+.nav-active {
+    color: #633991 !important;
+}
+
+@keyframes line {
+    0% {
+      transform: scaleX(0);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
