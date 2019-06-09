@@ -37,4 +37,16 @@ $(document).ready(function(){
             disableOnInteraction: false,
         },
       });
+
+      $('.owl-carousel').owlCarousel({
+        loop:true,
+        dots: true,
+        nav: false,
+        items:1,
+        autoplay:true,
+        autoplayTimeout:3000,
+        autoplayHoverPause:true,
+        smartSpeed: 800,
+        margin: 0,
+    })
 });

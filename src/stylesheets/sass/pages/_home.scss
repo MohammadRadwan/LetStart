@@ -258,8 +258,118 @@ main {
     }
     // End Pricing
 
+    // Start Testimonials
+    .testimonials {
+        padding: 100px 0;
+        text-align: center;
+        background: #faf6fb;
+        .owl-carousel {
+            .item {
+                .author-image {
+                    display: block;
+                    margin-bottom: 30px;
+                    img {
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 50%;
+                        display: inline-block;
+                    }
+                }
+                .info {
+                    position: relative;
+                    .author-text {
+                        width: 70%;
+                        margin: auto;
+                        p {
+
+                        }
+                    }
+                    .author-name {
+                        margin-top: 30px;
+                        h6 {
+                            font-weight: bold;
+                            small {
+                                font-size: 0.75rem;
+                                color: #a5a5a5;
+                                &:before {
+                                    content: '/';
+                                    display: inline-block;
+                                    margin-right: 5px;
+                                    margin-left: 5px;
+                                }
+                            }
+                        }
+                        ul {
+                            li {
+                                margin-right: 2px;
+                                font-size: 0.75rem;
+                                i {
+                                    color: #fac50f;
+                                }
+                            }
+                        }
+                    }                     
+                    &:before {
+                        content: '\f10d';
+                        display: inline-block;
+                        position: absolute;
+                        left: 7%;
+                        top: -3px;
+                        bottom: 0;
+                        width: 30px;
+                        height: 50px;
+                        line-height: 1;
+                        font-family: "FontAwesome";
+                        color: #633991;
+                        font-size: 2rem;
+                    }
+                    &:after {
+                        content: '\f10e';
+                        display: inline-block;
+                        position: absolute;
+                        right: 7%;
+                        bottom: 0px;
+                        width: 30px;
+                        height: 50px;
+                        line-height: 1;
+                        font-family: "FontAwesome";
+                        color: #633991;
+                        font-size: 2rem;
+                    }
+                }
+            }
+            .owl-stage {
+                transition: all 1.2s ease 0s !important;
+            }
+            .owl-dots {
+                margin-top: 30px;
+                text-align: center;
+                button {
+                    background-color: unset;
+                    border: 1px solid #633991;
+                    width: 25px;
+                    height: 6px;
+                    display: inline-block;
+                    margin-right: 10px;
+                    border-radius: 4px;
+                    span {
+
+                    }
+                    &:focus {
+                        outline: 0;
+                        text-decoration: none;
+                    }
+                }
+                button.active {
+                    background: #633991;
+                }
+            }
+        }
+    }
+    // End Testimonials
+
     // Start Global
-    .features, .about, .slider, .subscribe, .pricing {
+    .features, .about, .slider, .subscribe, .pricing, .testimonials {
         h2 {
             font-family: "Poppins", serif;
             letter-spacing: 1px;
