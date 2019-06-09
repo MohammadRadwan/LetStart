@@ -251,6 +251,52 @@ html(lang="en")
                         
             //- End Testimonials
 
+            //- Start Download
+            section.download
+                .container
+                    .row
+                        .col-md-6
+                            .download-info
+                                h2 App Is Available On Popular Android & Apple Platform
+                                p Available for all major mobile and desktop platforms. Rapidiously visualize optimal ROI rather than enterprise-wide methods of empowerment.
+                                .download-btn.store-btn
+                                    a(href="#" class="active")
+                                        i(class="fa fa-apple" aria-hidden="true")
+                                        | App Store
+                                    a(href="#")
+                                        i(class="fa fa-android" aria-hidden="true")
+                                        | Google Play
+                        .col-md-5.offset-md-1
+                            .download-image
+                                img(src="images/download/download-app.png", alt="")
+            //- End Download
+
+            //- Start Contact
+            section.contact-us
+                .container
+                    .row.align-items-center
+                        .col-md-6
+                            address
+                                .location
+                                    p 
+                                        i(class="fa fa-map-marker" aria-hidden="true")
+                                        | 1211 Pacific St, Brooklyn, NY 100299 USA
+                                .contact
+                                    p
+                                        i(class="fa fa-envelope-o" aria-hidden="true")
+                                        a(href="mailto:dummy@example.com") dummy@example.com
+                                    p
+                                        i(class="fa fa-phone" aria-hidden="true")
+                                        span 123-4356-9988
+                        .col-md-6
+                            ul.social-icons
+                                - var classes = ["fa fa-facebook", "fa fa-twitter", "fa fa-instagram"]
+                                each item in classes
+                                    li.d-inline-block
+                                        a(href="#")
+                                            i(class=item)
+            //- End Contact
+
         //- End Main-Content
 
         //- Start Footer
