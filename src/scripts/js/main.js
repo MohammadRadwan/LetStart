@@ -27,6 +27,7 @@ $(document).ready(function(){
         spaceBetween: 38,
         loop: true,
         speed: 1500,
+        grabCursor: true,
         pagination: {
           el: '.swiper-pagination',
           clickable: true,

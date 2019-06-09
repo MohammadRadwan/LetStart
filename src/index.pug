@@ -127,6 +127,77 @@ html(lang="en")
                         .swiper-pagination
             //- End Slider
 
+            //- Start Subscribe
+            section.subscribe
+                .container-fluid
+                    .row
+                        .col-md-6
+                            .newsletter-info
+                                h2 Stay with us
+                                p Subscribe To Our Newsletters Now And Stay Up-To-Date With New Collection,The Latest Lookbooks And Exclusive Offers.
+                                .newsletter
+                                    .input-group
+                                        input(
+                                            type="email"
+                                            class="form-control"
+                                            placeholder="Email address"
+                                        )
+                                        span.input-group-btn
+                                            button(type="button")
+                                                i(class="fa fa-paper-plane-o")
+                        .col-md-6
+                            .video-container
+                                .video-content
+                                    a(href="https://www.youtube.com/watch?v=f5BBJ4ySgpo" class="video-btn" target="_blank")
+                                        i(class="fa fa-play" aria-hidden="true")
+                                        .circle
+                                    h3 Watch the video
+            //- End Subscribe
+
+            //- Start Price
+            section.pricing.text-center
+                .container
+                    h2 Upgrade to pro
+                    .row
+                        .col-md-4
+                            .pricing-card
+                                .pricing-header
+                                    small.text-uppercase Personal
+                                    span.price $19/m
+                                    ul.list-group.list-unstyled
+                                        - var items = ["10 Projects", "5 GB Storage", "Basic Support"]
+                                        each val in items
+                                            li.list-group-item=val
+                                        - var deletedItems = ["Collaboration", "Reports and analytics"]
+                                        each value in deletedItems
+                                            li.list-group-item
+                                                del=value
+                                .pricing-footer
+                                    a(href="#" class="card-btn") Choose this plan
+                        .col-md-4
+                            .pricing-card.popular
+                                .pricing-header
+                                    small.text-uppercase For teams
+                                    span.price $29/m
+                                    ul.list-group.list-unstyled
+                                        - var items = ["Unlimited Projects", "100 GB Storage", "Priority Support", "Collaboration", "Reports and analytics"]
+                                        each val in items
+                                            li.list-group-item=val
+                                .pricing-footer
+                                    a(href="#" class="card-btn") Choose this plan
+                        .col-md-4
+                            .pricing-card
+                                .pricing-header
+                                    small.text-uppercase Enterprise
+                                    span.price $59/m
+                                    ul.list-group.list-unstyled
+                                        - var items = ["Unlimited Projects", "Unlimited Storage", "Web hooks", "Collaboration", "Reports and analytics"]
+                                        each val in items
+                                            li.list-group-item=val
+                                .pricing-footer
+                                    a(href="#" class="card-btn") Choose this plan
+            //- End Price
+
         //- End Main-Content
 
         //- Start Footer
