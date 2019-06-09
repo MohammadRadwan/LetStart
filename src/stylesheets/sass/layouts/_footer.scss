@@ -1,0 +1,18 @@
+footer {
+    text-align: center;
+    padding: 40px 0;
+    nav {
+        ul {
+            li {
+                a {
+                    color: #e54595;
+                    padding-top: 0 !important;
+                    padding-bottom: 0 !important;
+                    &:hover {
+                        color:#ff49a4;
+                    }
+                }
+            }
+        }
+    }
+}
