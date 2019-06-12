@@ -23,3 +23,5 @@ Its a single page protfolio or app landing page template and its is crafted base
 7. Built on Bootstrap 4 & Fully Mobile Responsive
 
 8. Automated Development Workflow & Minified Files To Ensure High Performence Using (Gulp). 
+
+## Please Open The Dist Folder To See The Template. 
