@@ -1,0 +1,17 @@
+/* Start Scroll */
+.scroll {
+	position: fixed;
+    bottom: 30px;
+    right: 20px;
+    opacity: 0.6;
+    padding: 5px;
+    border-radius: 50%;
+    display: none;
+    background-image: linear-gradient(90deg,#ff0084 0%,#9b1be5 100%);
+    color: #fff;
+    cursor: pointer;
+    z-index: 10;
+    &:hover { opacity: 1; }
+    i { padding: 5px 10px; }   
+}
+/* End Scroll */

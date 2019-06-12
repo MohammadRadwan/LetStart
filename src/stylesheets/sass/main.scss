@@ -1,11 +1,13 @@
 @import 'pages/global';
 
+@import 'components/preloader';
+
 @import 'layouts/header';
     
-@import 'pages/home';
-
-@import 'components/slider';
+@import 'pages/home';   
 
 @import 'components/store-btn';
 
-@import 'layouts/footer';  
+@import 'components/scroll';
+
+@import 'layouts/footer';

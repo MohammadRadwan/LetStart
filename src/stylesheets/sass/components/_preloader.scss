@@ -1,0 +1,32 @@
+@import '../helpers/_variables.scss';
+
+// Start Loading
+.preloader {
+    position: $fixed;
+    z-index: 9999;
+    background-color: $whiteColor;
+    .bar-loader {
+        position: $absolute;
+        margin: auto;
+        width: 55px;
+        height: 55px; 
+        span {
+            width: 5px;
+            height: 25px;
+            margin-right: 5px;
+            background-color: $mainColor;
+            &:last-child { margin-right: 0; }
+            &:nth-child(1) { animation: bar-loader 1s ease-in-out infinite; }
+            &:nth-child(2) { animation: bar-loader 1s ease-in-out 0.15s infinite; }
+            &:nth-child(3) { animation: bar-loader 1s ease-in-out 0.3s infinite; }
+            &:nth-child(4) { animation: bar-loader 1s ease-in-out 0.45s infinite; }
+        }
+    }  
+}
+.preloader, .bar-loader {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+// End Loading

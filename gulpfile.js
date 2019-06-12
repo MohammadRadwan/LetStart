@@ -27,7 +27,7 @@ gulp.task('connect', function() {
 
 // Logo Task
 gulp.task('logo', function() {
-    return gulp.src('src/*.ico')
+    return gulp.src('src/favicon.png')
         .pipe(plumber({ errorHandler: function(err) {
             notify.onError({
                 title: "Gulp error in " + err.plugin,
@@ -47,8 +47,8 @@ gulp.task('html', function() {
                 message:  err.toString()
             })(err);
         }}))
-        //.pipe(pug())
-        .pipe(pug({pretty: true}))
+        .pipe(pug())
+        //.pipe(pug({pretty: true}))
         .pipe(gulp.dest('dist'))
         .pipe(connect.reload());
 });
@@ -74,12 +74,11 @@ gulp.task('stylesheets', function() {
         .pipe(connect.reload());
 });
 
-// Fontawesome Task
+// Css-vendors Task
 gulp.task('css-vendors', function () {
     return gulp.src([
         'node_modules/font-awesome/css/font-awesome.min.css', 
         'node_modules/bootstrap/dist/css/bootstrap.min.css',
-        'src/stylesheets/vendors/animate.css',
         'src/stylesheets/vendors/*.css',
         ])
         .pipe(plumber({ errorHandler: function(err) {
@@ -88,8 +87,8 @@ gulp.task('css-vendors', function () {
                 message:  err.toString()
             })(err);
         }}))
+        .pipe(concat('vendors.min.css'))
         .pipe(csso())
-        //.pipe(concat('vendors.min.css'))
         .pipe(gulp.dest('dist/css/vendors'))
         .pipe(connect.reload());
 });
@@ -142,7 +141,10 @@ gulp.task('js-vendors', function () {
         'node_modules/jquery/dist/jquery.min.js', 
         'node_modules/popper.js/dist/umd/popper.min.js',
         'node_modules/bootstrap/dist/js/bootstrap.min.js',
-        'src/scripts/vendors/*.js',
+        'src/scripts/vendors/jquery.nicescroll.js',
+        'src/scripts/vendors/swiper.min.js',
+        'src/scripts/vendors/owl.carousel.min.js',
+        'src/scripts/vendors/aos.js',
         ])
         .pipe(plumber({ errorHandler: function(err) {
             notify.onError({
@@ -150,6 +152,8 @@ gulp.task('js-vendors', function () {
                 message:  err.toString()
             })(err);
         }}))
+        .pipe(concat('vendors.min.js'))
+        .pipe(uglify())
         .pipe(gulp.dest('dist/js/vendors'))
         .pipe(connect.reload());
 });
@@ -170,11 +174,12 @@ gulp.task('compress', function () {
 
 // Watch Task
 gulp.task('watch', function () {
-    gulp.watch('src/*.ico', ['logo']);
+    gulp.watch('src/favicon.png', ['logo']);
     gulp.watch('src/*.pug', ['html']);
     gulp.watch([
         'node_modules/font-awesome/css/font-awesome.min.css',
-        'node_modules/bootstrap/dist/css/bootstrap.min.css'
+        'node_modules/bootstrap/dist/css/bootstrap.min.css',
+        'src/stylesheets/vendors/*.css',
     ], ['css-vendors']); 
     gulp.watch([
         'node_modules/bootstrap/scss/bootstrap.scss',
@@ -183,8 +188,12 @@ gulp.task('watch', function () {
     gulp.watch(['node_modules/font-awesome/fonts/*', 'src/fonts/*.*'], ['fonts']);
     gulp.watch([
         'node_modules/jquery/dist/jquery.min.js', 
-        'node_modules/popper.js/dist/popper.min.js',
-        'node_modules/bootstrap/dist/js/bootstrap.min.js'
+        'node_modules/popper.js/dist/umd/popper.min.js',
+        'node_modules/bootstrap/dist/js/bootstrap.min.js',
+        'src/scripts/vendors/jquery.nicescroll.js',
+        'src/scripts/vendors/swiper.min.js',
+        'src/scripts/vendors/owl.carousel.min.js',
+        'src/scripts/vendors/aos.js',
     ], ['js-vendors']);
     gulp.watch('src/scripts/js/*.js', ['scripts']);
     gulp.watch('src/images/*', ['images']);

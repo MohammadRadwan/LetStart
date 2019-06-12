@@ -1,6 +1,3 @@
-include pug/includes/variables
-include pug/includes/mixins
-
 doctype
 html(lang="en")
     head
@@ -8,60 +5,83 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
         meta(name="viewport" content="width=device-width, initial-scale=1")
-        meta(name = "description", content="Pug Project")
+        meta(name = "description", content="Landing Page Project Using (Gulp, Pug, CSS3, SASS, Bootstrap, JQuery, Animation, Sliders, and Fully-Responsive)")
         //- End Meta
         //- Start Title
-        title #{indexTitle}
+        title Landing Page
         //- End Title
         //- Start Styles
         include pug/includes/styles
         //- End Styles
-    body
-        //- Start Header
-        include pug/pages/header
-        //- End Header
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="js/vendors/html5shiv.min.js"></script>
+            <script src="js/vendors/respond.min.js"></script>
+        <![endif] -->
+    body(data-spy="scroll" data-target="#navbar" data-offset="50")
 
-        //- Start Main-Content
-        main.home-content
-            section.home-banner
-                .container
-                    //- Start Interface
-                    .row
-                        .col-md-7.col-lg-6
-                            //- Left
-                            .home-info
-                                h1 App That <br>Suits You Better
-                                p.subtitle inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards.
-                                .store-btn
-                                    a(href="#" class="active")
-                                        i(class="fa fa-apple" aria-hidden="true")
-                                        | App Store
-                                    a(href="#")
-                                        i(class="fa fa-android" aria-hidden="true")
-                                        | Google Play
-                        .col-md-3.offset-lg-2.col-lg-4
-                            //- Right
-                            .home-image
-                                img(class="img-fluid" src="images/header/mockup1.png" alt="Interface Image")
-                    //- End Interface
+        //- Start Preloader
+        .preloader
+            .bar-loader
+                - for (var x = 1; x <= 4; x++)
+                    span.d-inline-block
+        //- End Preloader
+
+        //- Start Scroll
+        .scroll
+            i(class="fa fa-angle-up fa-2x rounded-circle")
+        //- End Scroll
+
+        .page-wrapper
+            //- Start Header
+            include pug/layouts/header
+            //- End Header
+
+            //- Start Home-Banner
+            main
+                section.home-banner#home
+                    .container
+                        .row
+                            .col-md-7.col-lg-6
+                                //- Info
+                                .home-info(data-aos="fade-right" data-aos-duration="600" data-aos-delay="300")
+                                    h1.text-uppercase App That <br>Suits You Better
+                                    p.subtitle(class="font-weight-bold") inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards.
+                                    .store-btn
+                                        a(href="#" class="active")
+                                            i(class="fa fa-apple" aria-hidden="true")
+                                            | App Store
+                                        a(href="#")
+                                            i(class="fa fa-android" aria-hidden="true")
+                                            | Google Play
+                            .col-md-5.offset-lg-2.col-lg-4
+                                //- Image
+                                .home-image(data-aos="fade-left" data-aos-duration="600" data-aos-delay="400")
+                                    img(class="img-fluid" src="images/header/mockup1.png" alt="Interface Image")
+            //- End Home-Banner
 
             //- Start Features
-            section.features.text-center
+            section.features.text-center#features
                 .container
-                    h2 Features You Love
+                    h2(data-aos="fade-In") Features You 
+                        span Love
                     .row
                         .col-md-4
-                            .features-info
+                            //- First Feature
+                            .features-info(data-aos="fade-up" data-aos-duration="400")
                                 i(class="fa fa-smile-o" aria-hidden="true")
                                 h6 Simple
                                 p We build pretty simple tools and this allows us to take designs simple
                         .col-md-4
-                            .features-info
+                            //- Second Feature
+                            .features-info(data-aos="fade-up" data-aos-duration="600")
                                 i(class="fa fa-pencil-square-o" aria-hidden="true")
                                 h6 Powerful Design
                                 p We build pretty simple tools and this allows us to take designs simple
                         .col-md-4
-                            .features-info
+                            //- Third Feature
+                            .features-info(data-aos="fade-up" data-aos-duration="800")
                                 i(class="fa fa-cog" aria-hidden="true")
                                 h6 Customizability
                                 p We build pretty simple tools and this allows us to take designs simple
@@ -72,39 +92,48 @@ html(lang="en")
                 .container
                     .row
                         .col-md-8.mx-auto.text-center.about-head
-                            h2 About App
+                            h2(data-aos="fade-In") About 
+                                span App
                             p Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua. Ut Enim Ad Minim Veniam, Quis Nostrud Exercitation.Look Even Slightly Believable
-                    .row
-                        .col-md-5
+                    .row.align-items-center
+                        //- About Image
+                        .col-md-5(data-aos="fade-right" data-aos-duration="400")
                             img(src="images/about/mockup7.png" class="img-fluid"  alt="About Image")
-                        .col-md-7
+                        //- About Info
+                        .col-md-7(data-aos="fade-left" data-aos-duration="600")
                             .row
                                 .col-md-6.col-lg-4
+                                    //- First
                                     .about-info
                                         i(class="fa fa-cog" aria-hidden="true")
                                         h6 Customizability
                                         p We build pretty simple tools and this allows us to take designs simple
                                 .col-md-6.col-lg-4
+                                    //- Second
                                     .about-info
                                         i(class="fa fa-diamond" aria-hidden="true")
                                         h6 Unique Design
                                         p We build pretty simple tools and this allows us to take designs simple
                                 .col-md-6.col-lg-4
+                                    //- Third
                                     .about-info
                                         i(class="fa fa-refresh" aria-hidden="true")
                                         h6 Always updated
                                         p We build pretty simple tools and this allows us to take designs simple
                                 .col-md-6.col-lg-4
+                                    //- Forth
                                     .about-info
                                         i(class="fa fa-eye" aria-hidden="true")
                                         h6 Retina Ready
                                         p We build pretty simple tools and this allows us to take designs simple
                                 .col-md-6.col-lg-4
+                                    //- Fifth
                                     .about-info
                                         i(class="fa fa-headphones" aria-hidden="true")
                                         h6 Excellent Support
                                         p We build pretty simple tools and this allows us to take designs simple
                                 .col-md-6.col-lg-4
+                                    //- Sixth
                                     .about-info
                                         i(class="fa fa-mobile" aria-hidden="true")
                                         h6 Responsive
@@ -112,28 +141,34 @@ html(lang="en")
             //- End About
 
             //- Start Slider
-            section.slider
+            section.slider#screenshots
                 .container
                     .row
                         .col-md-8.mx-auto.text-center.slider-head
-                            h2 App Screenshots
+                            //- Title
+                            h2(data-aos="fade-In") App 
+                                span Screenshots
+                    //- Slider
                     .screenshot-container
                         .swiper-container
                             .swiper-wrapper
                                 - for (var x = 1; x <= 7; x++)
-                                    .swiper-slide
+                                    .swiper-slide(class="d-flex justify-content-center align-items-center")
                                         img(src="images/slider/" + x + ".jpg", class="img-fluid", alt="Screenshot " + x)
                         //- Pagination
-                        .swiper-pagination
+                        .swiper-pagination(class="d-flex justify-content-center w-100")
             //- End Slider
 
             //- Start Subscribe
             section.subscribe
                 .container-fluid
                     .row
-                        .col-md-6
-                            .newsletter-info
-                                h2 Stay with us
+                        .col-lg-6
+                            //- Info
+                            .newsletter-info.d-flex
+                                h2(data-aos="fade-In") 
+                                    span Stay
+                                    |  with us
                                 p Subscribe To Our Newsletters Now And Stay Up-To-Date With New Collection,The Latest Lookbooks And Exclusive Offers.
                                 .newsletter
                                     .input-group
@@ -145,24 +180,28 @@ html(lang="en")
                                         span.input-group-btn
                                             button(type="button")
                                                 i(class="fa fa-paper-plane-o")
-                        .col-md-6
-                            .video-container
+                        .col-lg-6
+                            //- Video
+                            .video-container(class="w-100 h-100 d-flex justify-content-center align-items-center" data-aos="zoom-in" data-aos-duration="600")
                                 .video-content
-                                    a(href="https://www.youtube.com/watch?v=f5BBJ4ySgpo" class="video-btn" target="_blank")
+                                    a(href="#" class="video-btn d-flex justify-content-center align-items-center" target="_blank")
                                         i(class="fa fa-play" aria-hidden="true")
-                                        .circle
                                     h3 Watch the video
             //- End Subscribe
 
             //- Start Price
-            section.pricing.text-center
+            section.pricing.text-center#pricing
                 .container
-                    h2 Upgrade to pro
+                    //- Title
+                    h2(data-aos="fade-In") Upgrade to 
+                        span pro
                     .row
                         .col-md-4
-                            .pricing-card
+                            //- First Card
+                            .pricing-card(data-aos="fade-right" data-aos-duration="800")
+                                //- Card Header
                                 .pricing-header
-                                    small.text-uppercase Personal
+                                    small Personal
                                     span.price $19/m
                                     ul.list-group.list-unstyled
                                         - var items = ["10 Projects", "5 GB Storage", "Basic Support"]
@@ -172,40 +211,52 @@ html(lang="en")
                                         each value in deletedItems
                                             li.list-group-item
                                                 del=value
+                                //- Card Footer
                                 .pricing-footer
                                     a(href="#" class="card-btn") Choose this plan
                         .col-md-4
-                            .pricing-card.popular
+                            //- Second Card
+                            .pricing-card.popular(data-aos="fade-in" data-aos-duration="1000" data-aos-delay="300")
+                                //- Card Header
                                 .pricing-header
-                                    small.text-uppercase For teams
+                                    small For teams
                                     span.price $29/m
                                     ul.list-group.list-unstyled
                                         - var items = ["Unlimited Projects", "100 GB Storage", "Priority Support", "Collaboration", "Reports and analytics"]
                                         each val in items
                                             li.list-group-item=val
+                                //- Card Footer
                                 .pricing-footer
                                     a(href="#" class="card-btn") Choose this plan
                         .col-md-4
-                            .pricing-card
+                            //- Third Card
+                            .pricing-card(data-aos="fade-left" data-aos-duration="800")
+                                //- Card Header
                                 .pricing-header
-                                    small.text-uppercase Enterprise
+                                    small Enterprise
                                     span.price $59/m
                                     ul.list-group.list-unstyled
                                         - var items = ["Unlimited Projects", "Unlimited Storage", "Web hooks", "Collaboration", "Reports and analytics"]
                                         each val in items
                                             li.list-group-item=val
+                                //- Card Footer
                                 .pricing-footer
                                     a(href="#" class="card-btn") Choose this plan
             //- End Price
 
             //- Start Testimonials
-            section.testimonials
-                h2 What Customer says
+            section.testimonials.text-center
+                //- Title
+                h2(data-aos="fade-In") What 
+                    span Customer
+                    |  says
                 .container
+                    //- Carousel
                     .owl-carousel
+                        //- First Author
                         .item
                             .author-image
-                                img(src="images/testimonials/testimonial-image.jpg", alt="")
+                                img(src="images/testimonials/testimonial-image.jpg", alt="Author Image 1")
                             .info
                                 .author-text
                                     p Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea quia nesciunt. Ducimus aut sed ipsam. Autem eaque officia cum exercitationem. Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea nesciunt. Ducimus aut sed ipsam. Autem eaque officia cum exercitationem.
@@ -218,9 +269,10 @@ html(lang="en")
                                                 i(class="fa fa-star")
                                         li.d-inline-flex
                                             i(class="fa fa-star-half-empty")
+                        //- Second Author
                         .item
                             .author-image
-                                img(src="images/testimonials/testimonial-image-2.jpg", alt="")
+                                img(src="images/testimonials/testimonial-image-2.jpg", alt="Author Image 2")
                             .info
                                 .author-text
                                     p Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea quia nesciunt. Ducimus aut sed ipsam. Autem eaque officia cum exercitationem. Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea nesciunt. Ducimus aut sed ipsam. Autem eaque officia cum exercitationem.
@@ -233,9 +285,10 @@ html(lang="en")
                                                 i(class="fa fa-star")
                                         li.d-inline-flex
                                             i(class="fa fa-star-half-empty")
+                        //- Third Author
                         .item
                             .author-image
-                                img(src="images/testimonials/testimonial-image-3.jpg", alt="")
+                                img(src="images/testimonials/testimonial-image-3.jpg", alt="Author Image 3")
                             .info
                                 .author-text
                                     p Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea quia nesciunt. Ducimus aut sed ipsam. Autem eaque officia cum exercitationem. Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea nesciunt. Ducimus aut sed ipsam. Autem eaque officia cum exercitationem.
@@ -248,16 +301,16 @@ html(lang="en")
                                                 i(class="fa fa-star")
                                         li.d-inline-flex
                                             i(class="fa fa-star-half-empty")
-                        
             //- End Testimonials
 
             //- Start Download
-            section.download
+            section.download#download
                 .container
                     .row
                         .col-md-6
-                            .download-info
-                                h2 App Is Available On Popular Android & Apple Platform
+                            //- Info
+                            .download-info(data-aos="fade-right" data-aos-duration="600")
+                                h2.font-weight-bold(data-aos="fade-In") App Is Available On Popular Android & Apple Platform
                                 p Available for all major mobile and desktop platforms. Rapidiously visualize optimal ROI rather than enterprise-wide methods of empowerment.
                                 .download-btn.store-btn
                                     a(href="#" class="active")
@@ -267,18 +320,20 @@ html(lang="en")
                                         i(class="fa fa-android" aria-hidden="true")
                                         | Google Play
                         .col-md-5.offset-md-1
-                            .download-image
+                            //- Image
+                            .download-image(data-aos="fade-down-left" data-aos-duration="800" data-aos-delay="300")
                                 img(src="images/download/download-app.png", alt="")
             //- End Download
 
             //- Start Contact
-            section.contact-us
+            section.contact-us#contact
                 .container
                     .row.align-items-center
-                        .col-md-6
+                        .col-md-8
+                            //- Address
                             address
                                 .location
-                                    p 
+                                    p(class="d-inline-flex align-items-center")
                                         i(class="fa fa-map-marker" aria-hidden="true")
                                         | 1211 Pacific St, Brooklyn, NY 100299 USA
                                 .contact
@@ -288,19 +343,18 @@ html(lang="en")
                                     p
                                         i(class="fa fa-phone" aria-hidden="true")
                                         span 123-4356-9988
-                        .col-md-6
-                            ul.social-icons
+                        .col-md-4
+                            //- Social Links
+                            ul(class="social-icons m-0 p-0 w-100")
                                 - var classes = ["fa fa-facebook", "fa fa-twitter", "fa fa-instagram"]
                                 each item in classes
                                     li.d-inline-block
-                                        a(href="#")
+                                        a(href="#" class="d-flex align-items-center justify-content-center")
                                             i(class=item)
             //- End Contact
 
-        //- End Main-Content
-
         //- Start Footer
-        include pug/pages/footer
+        include pug/layouts/footer
         //- End Footer
 
         //- Start Scripts

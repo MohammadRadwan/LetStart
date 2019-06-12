@@ -1,35 +1,54 @@
+// Start Media Queries
+
 /* Max */
 $maxXXSmall: (max-width: 481px);
 $maxExtraSmall: (max-width: 576px);
-$maxSmall: (max-width: 768px);
+$maxSmall: (max-width: 767px);
 $maxMedium: (max-width: 992px);
 $maxLarge: (max-width: 1200px);
 
 /* Min */
-$minExtraSmall: (min-width: 576px);
-$minSmall: (min-width: 769px);
-$minMedium: (min-width: 992px);
+$minExtraSmall: (min-width: 577px);
+$minSmall: (min-width: 768px);
+$minMedium: (min-width: 993px);
 $minLarge: (min-width: 1200px);
 
-$mixMeduim-Large: (min-width: 992px) and (max-width: 1199px);
-$mixSmallMeduim: (min-width: 769px) and (max-width: 991px);
+$mixMeduim-Large: (min-width: 993px) and (max-width: 1199px);
+$mixSmallMeduim: (min-width: 768px) and (max-width: 992px);
+
+// End Media Queries
 
 /* Colors */
-$mainColor: #196E2F;
-$subColor: #00c633;
+$mainColor:#633991;
+$subColor: #e54595;
+$titleColor: #ff0084;
 $whiteColor: #fff;
+$lightWhiteColor: #faf6fb;
 $blackColor: #000;
-$greyColor: #727272;
-$backColor: #f7f6f6;
-
-/* Float */
-$floatLeft: left;
-$floatRight: right;
+$lightgreyColor: #a5a5a5;
+$pColor: #a8a8a8;
+$starsColor: #fac50f;
 
 /* Align */
-$textRight: right;
-$textLeft: left;
+$textStart: start;
+$textEnd: end;
 $textCenter: center;
 
-/* Extra */
-$hidden: hidden;
+/* Position */
+$relative: relative;
+$absolute: absolute;
+$fixed: fixed;
+
+/* Background size */
+$cover: cover;
+$contain: contain;
+
+/* Display */
+$block: block;
+$inline-block: inline-block;
+$flex: flex;
+$inline-flex: inline-flex;
+$none: none;
+
+/* Text */
+$uppercase: uppercase;

@@ -1,16 +1,21 @@
+@import '../helpers/_variables.scss';
+
 footer {
-    text-align: center;
-    padding: 40px 0;
+    font-size: 14px;
+    text-align: $textCenter;
+    padding: 40px 0 20px;
+    p { color: $pColor; }
     nav {
+        padding: 0;
         ul {
             li {
+                margin-bottom: .5rem;
+                margin-right: 1rem;
                 a {
-                    color: #e54595;
+                    color: $subColor;
                     padding-top: 0 !important;
                     padding-bottom: 0 !important;
-                    &:hover {
-                        color:#ff49a4;
-                    }
+                    &:hover { color:$titleColor; }
                 }
             }
         }

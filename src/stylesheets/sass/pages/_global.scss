@@ -1,69 +1,68 @@
-// Start Site Font
-@font-face {
-    font-family: 'merriweatherblack';
-    src: url('fonts/merriweather-black-webfont.woff2') format('woff2'),
-         url('fonts/merriweather-black-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+// Import
+@import '../helpers/_variables.scss';
+@import '../helpers/_mixins.scss';
 
-@font-face {
-    font-family: 'merriweatherbold';
-    src: url('fonts/merriweather-bold-webfont.woff2') format('woff2'),
-         url('fonts/merriweather-bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+// Start Generated Web-Font ("Montserrat" font used in this site)
+@font-face { font-family: 'montserratthin'; src: url('fonts/montserrat-thin-webfont.woff2') format('font-woff'), url('fonts/montserrat-thin-webfont.woff') format('woff'); }
+@font-face { font-family: 'montserratlight'; src: url('fonts/montserrat-light-webfont.woff2') format('woff2'), url('fonts/montserrat-light-webfont.woff') format('woff'); }
+@font-face { font-family: 'montserratmedium'; src: url('fonts/montserrat-medium-webfont.woff2') format('woff2'), url('fonts/montserrat-medium-webfont.woff') format('woff'); }
+@font-face { font-family: 'montserratregular'; src: url('fonts/montserrat-regular-webfont.woff2') format('woff2'), url('fonts/montserrat-regular-webfont.woff') format('woff'); }
+@font-face { font-family: 'montserratsemibold'; src: url('fonts/montserrat-semibold-webfont.woff2') format('woff2'), url('fonts/montserrat-semibold-webfont.woff') format('woff'); }
+// End Generated Web-Font
 
-@font-face {
-    font-family: 'merriweatherlight';
-    src: url('fonts/merriweather-light-webfont.woff2') format('woff2'),
-         url('fonts/merriweather-light-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'merriweatherregular';
-    src: url('fonts/merriweather-regular-webfont.woff2') format('woff2'),
-         url('fonts/merriweather-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'poppinsextrabold';
-    src: url('fonts/poppins-extrabold-webfont.woff2') format('woff2'),
-         url('fonts/poppins-extrabold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'poppinsmedium';
-    src: url('fonts/poppins-medium-webfont.woff2') format('woff2'),
-         url('fonts/poppins-medium-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'poppinsregular';
-    src: url('fonts/poppins-regular-webfont.woff2') format('woff2'),
-         url('fonts/poppins-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'poppinsthin';
-    src: url('fonts/poppins-thin-webfont.woff2') format('woff2'),
-         url('fonts/poppins-thin-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-// End Site Font
-
+// Start Body
 body {
-    font-family: poppinsregular;
+    position: $relative;
+    height: 100%;
+    transition: all 1s linear;
 }
+// End Body
+
+// Start Global For HomePage
+.features, .about, .slider, .subscribe, .pricing, .testimonials {
+    // Header's
+    h2 {
+        font-family: montserratlight;
+        letter-spacing: 1px;
+        margin-bottom: 70px;
+        text-transform: $uppercase;
+        position: $relative;
+        padding-bottom: 1rem;
+        &:after { @include line-gradient; }
+        @media #{$maxXXSmall} { font-size: 1.6rem; }
+    }
+    // Paragraph's
+    p {
+        color: $pColor;
+        line-height: 1.9;
+        font-family: montserratmedium;
+        font-size: 14px;
+        font-weight: 300;
+    }
+}
+
+// Padding's
+.about, .slider, .subscribe .newsletter-info , .pricing, .testimonials, .download { padding: 100px 0; }
+
+// Icon's
+.features-info, .about-info {
+    i { @include icon-gradient; }
+    h6 {
+        margin-bottom: 1rem;
+        font-weight: 600;
+        font-size: 1rem;
+    }
+}
+
+// Font's
+header { font-family: montserratsemibold; }
+.features-info, .about-info h6 { font-family: montserratregular; }
+body, .newsletter input, .contact-us address { font-family: montserratmedium; }
+.home-info .subtitle, .pricing-card span { font-family: montserratthin; }
+.home-info h1 { font-family: montserratlight; }
+
+// Color's
+h2 {
+    span { color: $titleColor; } 
+}
+// End Global For HomePage

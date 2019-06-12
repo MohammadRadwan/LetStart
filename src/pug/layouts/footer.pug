@@ -1,0 +1,13 @@
+footer.bg-light.text-center(data-aos="fade-In" data-aos-duration="600" data-aos-offset="100")
+    .container
+        .row
+            .col-lg-8.mx-lg-auto
+                //- Copyrights
+                p © Copyright 2019. MatrrDigital
+                //- Footer Nav
+                nav(class="navbar navbar-expand-lg justify-content-center nav-footer")
+                    ul(class="navbar-nav flex-md-row")
+                        - var links = ["About us", "Press", "Terms and Conditions", "Privacy Policy", "Contact"]
+                        each link in links
+                            li.d-inline-block.nav-item
+                                a(href="#" class="nav-link")=link     

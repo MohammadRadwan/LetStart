@@ -1,4 +1,4 @@
-/* Overlay */
+// Overlay 
 @mixin overlay {
     position: absolute;
     left: 0;
@@ -7,62 +7,25 @@
     height: 100%
 }
 
-/* Prefixes */
-@mixin prefixer($property, $value, $prefixes: ()) {
-    @each $prefix in $prefixes {
-        #{'-' + $prefix + '-' + $property}: $value;
-    }
-    #{$property}: $value;
-}
-
-/* Animation */
-@mixin keyFrame ($animation-name) {
-    @-webkit-keyframes #{$animation-name} {
-        @content;
-    }
-    @-moz-keyframes #{$animation-name} {
-        @content;
-    }
-    @keyframes #{$animation-name} {
-        @content;
-    }
-}
-
-/* Opacity */
-@mixin opacity($value) {
-    zoom: 1;
-    $opacity-ie: $value * 100;
-    filter: alpha(opacity = $opacity-ie);
-    opacity: $value;
-}
-
-/* Transition */
-@mixin transition($args...) { /* 3 dots means the value will the same as its typed */
-    -webkit-transition: $args;
-    -moz-transition: $args;
-    -o-transition: $args;
-    transition: $args;
-}
-
 // Used for Navmenu items
 @mixin menu-line {
     content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
     display: block;
     background-color: #ffffff;
     width: 100%;
     height: 2px;
-    position: absolute;
-    left: 0;
-    bottom: -8px;
 }
 
 @mixin line-gradient {
     content: '';
-    width: 100px;
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
+    width: 100px;
     margin: 0 auto;
     height: 1px;
     background-image: linear-gradient(90deg, #ff0084 0%, #9b1be5 100%);
@@ -75,3 +38,41 @@
     -webkit-text-fill-color: transparent;
     margin-bottom: 1rem;
 }
+
+/* Prefixes
+@mixin prefixer($property, $value, $prefixes: ()) {
+    @each $prefix in $prefixes {
+        #{'-' + $prefix + '-' + $property}: $value;
+    }
+    #{$property}: $value;
+}
+
+// Animation
+@mixin keyFrame ($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+// Opacity
+@mixin opacity($value) {
+    zoom: 1;
+    $opacity-ie: $value * 100;
+    filter: alpha(opacity = $opacity-ie);
+    opacity: $value;
+}
+
+// Transition
+@mixin transition($args...) { // 3 dots means the value will the same as its typed 
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}  
+*/

@@ -1,57 +1,66 @@
+@import '../helpers/_variables.scss';
 @import '../helpers/_mixins.scss';
 
 header {
-    font-family: "Montserrat", sans-serif;
-    position: fixed;
+    padding: 20px 0;
+    line-height: 1;
+    position: $fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 999;
     padding: 20px 25px;
-    line-height: 1;
     transition: all 0.4s ease;
     nav {
-        padding: 0;
-        .collapse {
+        .navbar-brand {
+            img.d-logo {
+                @media #{$maxMedium} { display: $none; }
+            }
+            img.m-logo {
+                display: $none;
+                @media #{$maxMedium} { display: $block; }
+            }
+        }
+        .navbar-toggler {
+            outline: 0;
+            text-decoration: $none;
+            border: 0;
+            .navbar-toggler-icon { background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); }
+            .navbar-toggler-icon-black { background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important; }
+        }
+        .navbar-collapse {
+            transition: all .5s ease !important;
+            @media #{$maxMedium} { margin-top: 20px; background-color: $whiteColor; }
             ul {
+                @media #{$maxMedium} { overflow: hidden; }
                 li {
                     padding: 0 10px;
-                    position: relative;
+                    position: $relative;
+                    @media #{$maxMedium} { padding: 0; width: 100%; }
                     a {
+                        transition: all 0.2s ease;
                         font-size: 12px;
-                        position: relative;
-                        color: #fff;
+                        position: $relative;
                         letter-spacing: 1px;
-                        text-transform: uppercase;
+                        text-transform: $uppercase;
                         line-height: 1px;
-                        text-decoration: none;
+                        text-decoration: $none;
                         padding-right: .5rem;
                         padding-left: .5rem;
+                        @media #{$maxMedium} { padding: 1.25rem 1rem !important; color: rgba(0,0,0,.5) !important; }
                     }
-                    &:hover {
-                        a {
-                            &:after {
-                                @include menu-line;
-                                animation: line .5s;
-                                transform-origin: 0% 100%;
-                            }
-                        }
+                    a.active {
+                        &:after { @include menu-line; transform: scaleX(1); }
+                        &:hover {
+                            &:after { animation: $none; }
+                        }  
                     }
-                }
-                li.active {
-                    a {
+                    &:hover a {
+                        @media #{$maxMedium} { color: $mainColor !important; }
                         &:after {
                             @include menu-line;
-                            transform: scaleX(1);
-                        }
-                    }
-                    &:hover {
-                        a {
-                            &:after {
-                                @include menu-line;
-                                animation: line 0s;
-                                transform: scaleX(1);
-                            }
+                            animation: line .5s;
+                            transform-origin: 0% 100%;
                         }
                     }
                 }
@@ -60,27 +69,39 @@ header {
     }
 }
 
-.nav-scroll {
-    background-color: #ffffff;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.nav-item {
-    color: rgba(0, 0, 0, 0.7) !important;
-    &:hover {
-        color: #633991 !important;
+// Show default logo on scroll
+.fixed-top {
+    .navbar-brand {
+        img.d-logo {
+            @media #{$maxMedium} { display: $block; }
+        }
+        img.m-logo {
+            @media #{$maxMedium} { display: $none; }
+        }
     }
 }
 
-.nav-active {
-    color: #633991 !important;
+// Additional Classes To Control Navbar On Responsive Sizes
+.nav-scroll { background-color: $whiteColor; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); }
+
+.nav-black { 
+    color: rgba(0, 0, 0, 0.5) !important;
+    &:hover { color: $mainColor !important; }
 }
 
+.nav-link.active { color: $mainColor !important; }
+
+.nav-active { color: $whiteColor !important; }
+
+// Bootstrap Overrides
+.navbar-light .navbar-nav .nav-link,
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-toggler { color: $whiteColor; }
+.navbar-light .navbar-toggler { border: 0; }
+
+// Animation
 @keyframes line {
-    0% {
-      transform: scaleX(0);
-    }
-    100% {
-      transform: scaleX(1);
-    }
-  }
+    0% { transform: scaleX(0); }
+    100% { transform: scaleX(1); }
+}
