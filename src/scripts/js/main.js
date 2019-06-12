@@ -131,14 +131,26 @@ $(document).ready(function(){
         disable: 'mobile'
     });
 
-
     /* Start Preloader */
     function hidePreLoader(){
         $(".preloader").fadeOut(500);
     }
+    hidePreLoader();
+    /* End Preloader */
 
+    /*
     $(window).on('load', function() {
         hidePreLoader();
     });
-    /* End Preloader */
+    
+    window.onload = function() {
+        hidePreLoader();
+    };
+
+    /*
+    function ContentLoaded(){
+        window.onload = function(){
+            hidePreLoader();
+        }
+    }*/
 });

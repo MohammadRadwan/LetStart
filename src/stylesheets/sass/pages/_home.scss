@@ -58,7 +58,7 @@ main {
             }
         }
         .home-image { 
-            z-index: 9999;
+            z-index: 1;
             animation: img-animation 2s infinite linear;
             @media #{$maxSmall} { display: $none; }
         }
