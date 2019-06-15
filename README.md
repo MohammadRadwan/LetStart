@@ -1,6 +1,6 @@
-# LetStart-Landing-Page
+# LetStart
 
-Its a single page protfolio or app landing page template and its is crafted based on w3c validation design guildlines and follows the best practices in usability and performance.
+Its a single page protfolio or app landing page template and its is crafted based on w3c validation design guildlines and follows the best practices in usability and performance created in (2019).
 
 ## Technologies Used:
 
